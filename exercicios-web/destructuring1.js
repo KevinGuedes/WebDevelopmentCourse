@@ -41,3 +41,10 @@ console.log(cep)
 
 const { conta: { agencia, numero } } = pessoa2
 // o 'filho' do dado precisa existir
+
+const teste = {
+    valor: false
+}
+
+const { valor = true } = teste
+console.log(valor)
