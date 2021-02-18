@@ -4,10 +4,9 @@ const imprimirSoma = (a, b) => {
 }
 
 imprimirSoma(2, 3)
-imprimirSoma(2) //somou com undefined
-imprimirSoma(1, 2, 3, 4)
+imprimirSoma(2) //somou a com undefined
+imprimirSoma(1, 2, 3, 4) //somou só os dois primeiros
 imprimirSoma()
-
 
 // funcao com retorno
 const soma = (a, b = 1) => {
@@ -16,4 +15,4 @@ const soma = (a, b = 1) => {
 
 console.log(soma(2, 3))
 console.log(soma(2))
-console.log(soma()) //somou com undefined
+console.log(soma()) //somou 1 com undefined
