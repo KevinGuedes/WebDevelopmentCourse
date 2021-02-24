@@ -1,4 +1,4 @@
-function substituirVetor (arrA, arrB){
+function substituirVetor(arrA, arrB) {
 
     if (arrA.length != arrB.length)
         return 'Tamanhos diferentes'
@@ -7,12 +7,12 @@ function substituirVetor (arrA, arrB){
     console.log('Vetor A)', arrA)
     console.log('Vetor B)', arrB)
 
-    for (let i = 0; i < arrA.length; i++){
-        arrA[i] += arrB[i] 
+    for (let i = 0; i < arrA.length; i++) {
+        arrA[i] += arrB[i]
         arrB[i] = arrA[i] - arrB[i]
         arrA[i] -= arrB[i]
     }
-    
+
     console.log('Depois')
     console.log('Vetor A)', arrA)
     console.log('Vetor B)', arrB)
