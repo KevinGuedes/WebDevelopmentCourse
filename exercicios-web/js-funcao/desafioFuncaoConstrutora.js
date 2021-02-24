@@ -1,9 +1,9 @@
 
-function Pessoa(nome){
+function Pessoa(nome) {
 
-    this.nome = nome;
+    this.nome = nome; //atributo público
 
-    this.falar = () => console.log(`Meu nome é ${this.nome}`)
+    this.falar = () => console.log(`Meu nome é ${this.nome}`) //método público
 }
 
 const p1 = new Pessoa('João')
