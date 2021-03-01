@@ -4,8 +4,10 @@ const pessoa = {
     peso: 65
 }
 
+console.log(pessoa.hasOwnProperty(nome)) //diz se a key é local ou herdada
+
 //reflection
-console.log(Object.keys(pessoa))
+console.log(Object.keys(pessoa)) //pega as keys locais, não as herdadas
 console.log(Object.values(pessoa))
 console.log(Object.entries(pessoa))
 
@@ -25,13 +27,19 @@ pessoa.dataNascimento = '01/01/2020'
 console.log(pessoa.dataNascimento)
 console.log(Object.keys(pessoa))
 
+const o1 = { b: 2, a: 4 }
+const o2 = { c: 3, a: 3 }
 const dest = { a: 1 }
-const o1 = { b: 2 }
-const o2 = { c: 3, a: 4 }
-const obj = Object.assign(dest /*objeto de destino*/, o1, o2)
+
+const obj = Object.assign(dest /*objeto de destino*/, o2, o1)
 //Passa os atributos de outros objetos para o objeto de destino
-console.log(obj) //prevalece o último 
+console.log('obj', obj) //prevalece o último 
+
+const obj2 = Object.assign(dest /*objeto de destino*/, o1, o2) //muda o objeto de destino
+console.log('obj2', obj2)
 
 Object.freeze(obj)
 obj.c = 1234
-console.log(obj)
+console.log('obj', obj)
+
+console.log(dest)

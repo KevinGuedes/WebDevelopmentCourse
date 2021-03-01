@@ -1,5 +1,5 @@
-function getPreco(imposto = 0, moeda = 'R$'){
-    return `R$ ${this.preco * (1-this.desc) * (1 + imposto)}`
+function getPreco(imposto = 0, moeda = 'R$') {
+    return `${moeda} ${this.preco * (1 - this.desc) * (1 + imposto)}`
 }
 
 const produto = {
@@ -19,5 +19,5 @@ console.log(getPreco().call(carro)) //amarra o contexto
 console.log(getPreco().apply(carro)) //amarra o contexto
 
 
-console.log(getPreco().call(carro, 0.17, '$')) 
+console.log(getPreco().call(carro, 0.17, '$'))
 console.log(getPreco().apply(global, [0.17, '$'])) //sem array dá erro
