@@ -4,7 +4,9 @@ const pessoa = {
     peso: 65
 }
 
-console.log(pessoa.hasOwnProperty(nome)) //diz se a key é local ou herdada
+console.log(pessoa.hasOwnProperty('nome')) //diz se a key é local ou herdada
+console.log(pessoa.hasOwnProperty('toString'))
+console.log(Object.prototype.hasOwnProperty('toString'))
 
 //reflection
 console.log(Object.keys(pessoa)) //pega as keys locais, não as herdadas
