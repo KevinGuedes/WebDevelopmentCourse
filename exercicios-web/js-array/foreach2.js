@@ -2,7 +2,7 @@
 Array.prototype.paraCada = function (callback) {
     for (let i in this) {
         callback(this[i], i, this)
-    }
+    } //mostra também as funções do objeto
 }
 
 
