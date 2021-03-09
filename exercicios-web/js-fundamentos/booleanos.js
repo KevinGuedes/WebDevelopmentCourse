@@ -57,4 +57,5 @@ console.log(3 && 3 && x())
 
 //Pode ser usado como um if 
 //Só executa quando condicao1 e condicao2 foram atendidas
+//útil quando tem várias condições para entrar no if
 condicao1 && condicao2 && executarAlgo()
