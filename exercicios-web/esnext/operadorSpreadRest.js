@@ -8,3 +8,8 @@ console.log(clone)
 const vetor1 = [1, 2, 3]
 const vetor2 = ['a', 'b', 'c', ...vetor1, 4, 5, 6, 7]
 console.log(vetor2)
+
+
+const teste = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+console.log(...teste)
+console.log([].concat(...teste))
