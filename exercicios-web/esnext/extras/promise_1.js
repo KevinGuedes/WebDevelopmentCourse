@@ -1,5 +1,5 @@
 console.log(typeof Promise)
-let p = new Promise(function (cumprirPromessa) {
+let p = new Promise(function (cumprirPromessa) { //é o resolve
     cumprirPromessa(['Ana', 'Bia', 'Carlos', 'Daniel']) //retorna somente um argumento
 })//pode colocar os .then já aqui
 
@@ -14,7 +14,7 @@ const primeiraLetra = string => string[0]
 
 new Promise(resolve => resolve(['Ana', 'Bia', 'Carlos', 'Daniel']))
     .then(primeiroElemento) //passa somente a função
-    .then(primeiraLetra)
+    .then(primeiraLetra) //Quando há uma entrada e a saída é a entarda aplicada na função
     .then(primeiraLetra => primeiraLetra.toLowerCase())
     .then(console.log)
     .catch(console.log)

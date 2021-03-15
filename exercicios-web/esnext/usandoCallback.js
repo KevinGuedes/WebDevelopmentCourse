@@ -19,8 +19,8 @@ const getTurma = (letra, callback) => {
 
 let nomes = []
 //!Famoso callback hell
-//Complicado e ilegível
 //!Não recomando utilizar desta maneira
+//Complicado e ilegível
 getTurma('A', alunos => {
     nomes = nomes.concat(alunos.map(aluno => `Turma A: ${aluno.nome}`))
     getTurma('B', alunos => {

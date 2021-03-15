@@ -1,7 +1,7 @@
 //Com promises
 const http = require('http')
 
-const getTurma = (letra) => {
+const getTurma = letra => {
     const url = `http://files.cod3r.com.br/curso-js/turma${letra.toUpperCase()}.json`
 
     return new Promise((resolve, reject) => {
