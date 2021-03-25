@@ -1,0 +1,82 @@
+<h1>Projeto (Pastas e Arquivos)</h1>
+
+<ul class="tree">
+    <li>
+        <span collapsible>Back-end</span>
+        <ul>
+            <li>
+                <span collapsible>Aplicação</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span collapsible>Configurações</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span collapsible>Front-end</span>
+        <ul>
+            <li>
+                <span collapsible>Public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<style>
+    [collapsible]:hover {
+        cursor: pointer;
+        border: 2px solid red;
+    }
+</style>
+<script>
+    const collapsible = document.querySelectorAll('[collapsible]')
+
+    collapsible.forEach(element => {
+        element.onclick = () => {
+            let siblings = getSiblings(element)
+
+            for (let i = 0; i < siblings.length; i++) {
+                if (siblings[i].style.display === "none") {
+                    siblings[i].style.display = "block";
+                } else {
+                    siblings[i].style.display = "none";
+                }
+            }
+        }
+    })
+
+    function getSiblings(element) {
+        let siblings = []
+
+        if (!element.parentNode) { /*parent node = tag 'mãe'*/
+            return siblings
+        }
+
+        let sibling = element.parentNode.firstChild
+
+        while (sibling) {
+            if (sibling.nodeType === 1 && sibling !== element) {
+                siblings.push(sibling)
+            }
+            sibling = sibling.nextSibling
+        }
+        return siblings
+    }
+</script>

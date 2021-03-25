@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Exercícios HTML</header>
+
+    <nav>
+        <!-- com href para ter o cursor como a mãozinha -->
+        <a href fetch-link="exercicios/teste.html">00 - Teste</a> |
+        <a href fetch-link="exercicios/texto1.html">01 - Texto 1</a> |
+        <a href fetch-link="exercicios/texto2.html">02 - Texto 2</a> |
+        <a href fetch-link="exercicios/listas.html">03 - Listas</a> |
+        <a href fetch-link="exercicios/listasAninhada.html">04 - Listas Aninhadas</a> |
+
+    </nav>
+
+    <section id="conteudo"></section>
+
+    <footer>
+        <hr>
+         Curso de Desenvolvimento Web Moderno - 2021
+    </footer>
+
+    <script>
+        //Método 1
+        // document.querySelectorAll('a').forEach(link => {
+        //     const conteudo = document.getElementById('conteudo')
+
+        //     link.onclick = (e) => { //o evento recebido do click
+        //         e.preventDefault() //Evitar comportamento padrão, no caso de um link, seria a navegação
+
+        //         fetch(link.href) //requisição para pegar o conteúdo do link
+        //             .then(response => response.text()) //Para pegar o conteúdo HTML
+        //             .then(html => conteudo.innerHTML = html)
+        //     }
+        // })
+
+        document.querySelectorAll('[fetch-link]').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+
+            link.onclick = (e) => { 
+                e.preventDefault() 
+
+                fetch(link.getAttribute('fetch-link'))
+                    .then(response => response.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+
+</html>
