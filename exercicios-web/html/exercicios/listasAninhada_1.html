@@ -2,10 +2,10 @@
 
 <ul class="tree">
     <li>
-        <span collapsible>Back-end</span>
+        <span collapsible-item>Back-end</span>
         <ul>
             <li>
-                <span collapsible>Aplicação</span>
+                <span collapsible-item>Aplicação</span>
                 <ul>
                     <li>produto.js</li>
                     <li>usuario.js</li>
@@ -13,7 +13,7 @@
                 </ul>
             </li>
             <li>
-                <span collapsible>Configurações</span>
+                <span collapsible-item>Configurações</span>
                 <ul>
                     <li>banco.js</li>
                     <li>rotas.js</li>
@@ -23,10 +23,10 @@
         </ul>
     </li>
     <li>
-        <span collapsible>Front-end</span>
+        <span collapsible-item>Front-end</span>
         <ul>
             <li>
-                <span collapsible>Public</span>
+                <span collapsible-item>Public</span>
                 <ul>
                     <li>app.css</li>
                     <li>app.js</li>
@@ -40,29 +40,30 @@
 
 <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
 <style>
-    [collapsible]:hover {
+    [collapsible-item]:hover {
         cursor: pointer;
-        border: 2px solid red;
+        transform: translateX(20px);
+        transition: 0.4s;
     }
 </style>
 <script>
-    const collapsible = document.querySelectorAll('[collapsible]')
+    const collapsible = document.querySelectorAll('[collapsible-item]')
 
     collapsible.forEach(element => {
         element.onclick = () => {
-            let siblings = getSiblings(element)
+            //debugger
+            let siblings = getElementSiblings(element)
 
-            for (let i = 0; i < siblings.length; i++) {
-                if (siblings[i].style.display === "none") {
-                    siblings[i].style.display = "block";
-                } else {
-                    siblings[i].style.display = "none";
-                }
-            }
+            siblings.forEach(sibling => {
+                if (sibling.style.display === "none")
+                    sibling.style.display = "block"
+                else 
+                    sibling.style.display = "none"
+            })
         }
     })
 
-    function getSiblings(element) {
+    function getElementSiblings(element) {
         let siblings = []
 
         if (!element.parentNode) { /*parent node = tag 'mãe'*/
@@ -77,6 +78,7 @@
             }
             sibling = sibling.nextSibling
         }
+
         return siblings
     }
 </script>

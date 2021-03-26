@@ -1,0 +1,57 @@
+<h1>Projeto (Pastas e Arquivos)</h1>
+
+<ul class="tree">
+    <li>
+        <span collapsible-item>Back-end</span>
+        <ul>
+            <li>
+                <span collapsible-item>Aplicação</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span collapsible-item>Configurações</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span collapsible-item>Front-end</span>
+        <ul>
+            <li>
+                <span collapsible-item>Public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<style>
+    [collapsible-item]:hover {
+        cursor: pointer;
+    }
+</style>
+<script>
+    document.querySelectorAll('[collapsible-item]').forEach(collapsible => {
+        collapsible.onclick = (e) => {
+            //debugger
+            const folderItems = collapsible.nextElementSibling //ignore text and comment elements
+            const actualDisplay = folderItems.style.display
+
+            folderItems.style.display = actualDisplay === 'none' ? 'block' : 'none'
+        }
+    })
+</script>
