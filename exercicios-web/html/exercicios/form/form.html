@@ -1,0 +1,65 @@
+<h1>Formulário</h1>
+
+<form action="http://localhost:3333/usuarios" method="POST">
+    <label>
+        Nome:
+        <input type="text" name="nome">
+    </label>
+
+    <label>
+        Senha:
+        <input typ e="password" name="senha">
+    </label>
+    <label>
+        Biografia:
+        <textarea name="bio" cols="30" rows="10"></textarea>
+    </label>
+
+    <div>
+        <!-- Value é o que vai para o back-end -->
+        <!-- name faz ele ser clicável apenas em um com nome 'tipo' -->
+        <input type="radio" name="tipo" value="admin"> Admin
+        <input type="radio" name="tipo" value="regular"> Regular
+        <input type="radio" name="tipo" value="titular"> Titular
+    </div>
+
+    <div>
+        <!-- Value é o que vai para o back-end -->
+        <!-- tipo faz ele ser clicável apenas em um do mesmo tipo -->
+        <input type="checkbox" name="ativo"> Ativo
+    </div>
+
+    <select name="estado">
+        <!-- Verificação no back-end -->
+        <option value="">Selecione um Estado</option>
+        <option value="ac">Acre</option>
+        <option value="ce">Ceará</option>
+        <option value="ca">Bahia</option>
+    </select>
+
+    <select name="interesses" multiple size="5">
+        <!-- com ctrl + click para selecionar vários -->
+        <option value="js">JavaScript</option>
+        <option value="py">Python</option>
+    </select>
+
+    <button>Adicionar</button>
+</form>
+
+<style>
+    form {
+        width: 30%;
+    }
+
+    input,
+    textarea,
+    select {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+        display: inline;
+    }
+</style>
