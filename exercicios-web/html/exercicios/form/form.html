@@ -1,6 +1,7 @@
 <h1>Formulário</h1>
 
-<form action="http://localhost:3333/usuarios" method="POST">
+<form method="POST">
+    <input type="hidden" name="id" value="3">
     <label>
         Nome:
         <input type="text" name="nome">
@@ -17,19 +18,17 @@
 
     <div>
         <!-- Value é o que vai para o back-end -->
-        <!-- name faz ele ser clicável apenas em um com nome 'tipo' -->
+        <!-- name faz ele ser clicável apenas em um com nome 'tipo', uma única escolha -->
         <input type="radio" name="tipo" value="admin"> Admin
         <input type="radio" name="tipo" value="regular"> Regular
         <input type="radio" name="tipo" value="titular"> Titular
     </div>
 
     <div>
-        <!-- Value é o que vai para o back-end -->
-        <!-- tipo faz ele ser clicável apenas em um do mesmo tipo -->
         <input type="checkbox" name="ativo"> Ativo
     </div>
 
-    <select name="estado">
+    <select name="estado" required>
         <!-- Verificação no back-end -->
         <option value="">Selecione um Estado</option>
         <option value="ac">Acre</option>
@@ -43,7 +42,9 @@
         <option value="py">Python</option>
     </select>
 
-    <button>Adicionar</button>
+    <!-- Diferentes endpoint do formulário -->
+    <button formaction="http://localhost:3333/usuarios">Adicionar</button>
+    <button formaction="http://localhost:3333/usuarios/3">Alterar</button>
 </form>
 
 <style>
